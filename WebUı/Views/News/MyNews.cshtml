@@ -1,0 +1,120 @@
+@model IEnumerable<News>
+@{
+    ViewData["Title"] = "Haberlerim";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<style>
+    .badge-pending {
+        background-color: #f6c23e;
+        color: #fff;
+    }
+
+    .badge-approved {
+        background-color: #1cc88a;
+        color: #fff;
+    }
+
+    .badge-rejected {
+        background-color: #e74a3b;
+        color: #fff;
+    }
+
+    .rejection-reason {
+        cursor: pointer;
+    }
+</style>
+<div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Haberlerim</h1>
+        <a asp-action="UserAddNews" class="btn btn-primary">
+            <i class="fas fa-plus-circle mr-2"></i>Yeni Haber Ekle
+        </a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Başlık</th>
+                            <th>Kategori</th>
+                            <th>Durum</th>
+                            <th>Tarih</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var news in Model)
+                        {
+                            <tr>
+                                <td>@news.Title</td>
+                                <td>@news.Category?.Name</td>
+                                <td>
+                                    @switch (news.Status)
+                                    {
+                                        case NewsStatus.Pending:
+                                            <span class="badge badge-pending">
+                                                <i class="fas fa-clock mr-1"></i>Onay Bekliyor
+                                            </span>
+                                            break;
+                                        case NewsStatus.Approved:
+                                            <span class="badge badge-approved">
+                                                <i class="fas fa-check-circle mr-1"></i>Onaylandı
+                                            </span>
+                                            break;
+                                        case NewsStatus.Rejected:
+                                            <span class="badge badge-rejected rejection-reason" 
+                                                  data-reason="@news.RejectionReason"
+                                                  data-toggle="tooltip" 
+                                                  title="Red sebebini görmek için tıklayın">
+                                                <i class="fas fa-times-circle mr-1"></i>Reddedildi
+                                            </span>
+                                            break;
+                                    }
+                                </td>
+                                <td>@news.CreatedDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>
+                                    <div class="btn-group">
+                                        
+                                        @if (news.Status == NewsStatus.Rejected)
+                                        {
+                                            <button type="button" 
+                                                    class="btn btn-info btn-sm rejection-reason"
+                                                    data-reason="@news.RejectionReason">
+                                                <i class="fas fa-info-circle"></i>
+                                            </button>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function() {
+            // Red sebebini göstermek için tıklama olayı
+            $('.rejection-reason').click(function() {
+                var reason = $(this).data('reason');
+                Swal.fire({
+                    title: 'Red Sebebi',
+                    text: reason,
+                    icon: 'info',
+                    confirmButtonText: 'Tamam'
+                });
+            });
+
+            // Tooltip'leri etkinleştir
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+} 

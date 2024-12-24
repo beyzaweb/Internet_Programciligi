@@ -1,0 +1,101 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model LoginViewModel
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-5">
+        <div class="card shadow-lg border-0">
+            <div class="card-header text-center border-0 bg-transparent pt-4">
+                <h3 class="text-primary mb-0">Hoş Geldiniz</h3>
+                <p class="text-muted">Hesabınıza giriş yapın</p>
+            </div>
+            <div class="card-body p-5">
+                <form asp-action="Login" asp-controller="User" method="post">
+                    <div class="form-floating mb-4">
+                        <input asp-for="Email" class="form-control" placeholder="Email" />
+                        <label asp-for="Email">Email Adresiniz</label>
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+                    
+                    <div class="form-floating mb-4">
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Şifre" />
+                        <label asp-for="Password">Şifreniz</label>
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+
+                    <div class="form-check mb-4">
+                        <input asp-for="RememberMe" class="form-check-input" id="rememberMe" />
+                        <label class="form-check-label text-muted" for="rememberMe">
+                            Beni Hatırla
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 mb-4">
+                        <i class="fas fa-sign-in-alt me-2"></i>Giriş Yap
+                    </button>
+
+                    <div class="text-center">
+                        <a href="@Url.Action("Register","User")" class="text-muted text-decoration-none">
+                            Hesabınız yok mu? <span class="text-primary">Kayıt Olun</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+        background: #fff;
+    }
+
+    .form-control {
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.15);
+    }
+
+    .form-floating label {
+        padding: 0.75rem 1rem;
+    }
+
+    .btn-primary {
+        border-radius: 10px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+    }
+
+    .form-check-input:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .text-primary {
+        color: #007bff !important;
+    }
+
+    .shadow-lg {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+    }
+</style>
+
+
+
+

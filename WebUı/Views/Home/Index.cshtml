@@ -1,0 +1,194 @@
+﻿@using System.Text.RegularExpressions;
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+@functions {
+    public string StripHtml(string html, int length = 100)
+    {
+        if (string.IsNullOrEmpty(html)) return string.Empty;
+
+        // HTML etiketlerini kaldır
+        var text = Regex.Replace(html, "<.*?>", string.Empty);
+
+        // HTML entity'leri decode et
+        text = System.Web.HttpUtility.HtmlDecode(text);
+
+        // Fazla boşlukları temizle
+        text = Regex.Replace(text, @"\s+", " ").Trim();
+
+        // Belirtilen uzunluğa göre kes
+        if (text.Length > length)
+        {
+            return text.Substring(0, length) + "...";
+        }
+
+        return text;
+    }
+}
+
+<div class="container">
+    @foreach (var category in Model.Categories)
+    {
+        if (Model.NewsByCategory.ContainsKey(category.Id) && Model.NewsByCategory[category.Id].Any())
+        {
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <h3 class="border-bottom pb-2 mb-3 text-primary">
+                        @category.Name
+                        <small class="text-muted">Haberleri </small>
+                    </h3>
+                </div>
+
+                @foreach (var news in Model.NewsByCategory[category.Id])
+                {
+                    <div class="col-md-4 mb-3">
+                        <div class="card shadow-sm h-100 border-light rounded">
+                            @if (!string.IsNullOrEmpty(news.ImagePath))
+                            {
+                                <img src="@news.ImagePath" class="card-img-top" alt="@news.Title" style="height: 250px; object-fit: cover; border-radius: 8px;">
+                            }
+                            <div class="card-body">
+                                <h5 class="card-title text-primary">@news.Title</h5>
+                                <p class="card-text text-muted" style="font-size: 0.95rem;">
+                                    @StripHtml(news.Content, 100)
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                        @news.CreatedDate.ToString("dd.MM.yyyy HH:mm")
+                                        <span class="float-end">
+                                            <i class="bi bi-eye"></i> @news.ViewCount
+                                        </span>
+                                    </small>
+                                </p>
+                                <a asp-controller="Home" asp-action="NewsDetail" asp-route-id="@news.Id" class="btn btn-primary btn-sm mt-2">Devamını Oku</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                @if (Model.NewsByCategory[category.Id].Count >= 3)
+                {
+                    <div class="col-12 text-center mt-3">
+                        <a asp-controller="Home" asp-action="CategoryNews" asp-route-categoryId="@category.Id" class="btn btn-outline-primary btn-sm rounded-pill">
+                            Tüm Haberleri Gör 
+                        </a>
+                    </div>
+                }
+            </div>
+        }
+    }
+
+    <!-- En Çok Okunan Haberler Bölümü -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="border-bottom pb-2 mb-3 text-primary">En Çok Okunan Haberler</h3>
+        </div>
+        @foreach (var news in Model.MostViewedNews)
+        {
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-sm h-100 border-light rounded">
+                    @if (!string.IsNullOrEmpty(news.ImagePath))
+                    {
+                        <img src="@news.ImagePath" class="card-img-top" alt="@news.Title" style="height: 150px; object-fit: cover; border-radius: 8px;">
+                    }
+                    <div class="card-body">
+                        <h6 class="card-title">@news.Title</h6>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <i class="bi bi-eye"></i> @news.ViewCount görüntülenme
+                            </small>
+                        </p>
+                        <a asp-controller="Home" asp-action="NewsDetail" asp-route-id="@news.Id" class="btn btn-primary btn-sm">Oku</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    /* General styling for news cards */
+    .card {
+        border-radius: 10px;
+        border: none;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #343a40;
+    }
+
+    .card-text {
+        color: #6c757d;
+    }
+
+    .card-body {
+        padding: 1.25rem;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 20px;
+    }
+
+    .btn-outline-primary {
+        border-color: #007bff;
+        color: #007bff;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 20px;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-sm {
+        padding: 5px 15px;
+        font-size: 0.9rem;
+    }
+
+    .text-muted {
+        font-size: 0.85rem;
+    }
+
+    .text-primary {
+        color: #007bff;
+    }
+
+    .bi-eye {
+        font-size: 1rem;
+    }
+
+    /* Centering the "More News" button */
+    .col-12.text-center.mt-3 {
+        margin-top: 2rem;
+    }
+
+    /* Responsive styles */
+    @@media (max-width: 768px) {
+        .card-img-top {
+            height: 180px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+        }
+
+        .card-text {
+            font-size: 0.85rem;
+        }
+    }
+</style>

@@ -1,0 +1,111 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebUı
+build_property.RootNamespace = WebUı
+build_property.ProjectDir = C:\Users\Beyza Aktimur\Desktop\final-int prog SON\Beyza Aktimur Haber Portali\Beyza Aktimur Haber Portali\WebUı\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Beyza Aktimur\Desktop\final-int prog SON\Beyza Aktimur Haber Portali\Beyza Aktimur Haber Portali\WebUı
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Admin/UsersList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXNlcnNMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Home/CategoryNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yeU5ld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Home/NewsDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxOZXdzRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/MyNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xNeU5ld3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/PendingNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xQZW5kaW5nTmV3cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/Preview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xQcmV2aWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/News/UserAddNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmV3c1xVc2VyQWRkTmV3cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Shared/_adminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9hZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Shared/_SideNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlTmF2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/User/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/User/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Beyza Aktimur/Desktop/final-int prog SON/Beyza Aktimur Haber Portali/Beyza Aktimur Haber Portali/WebUı/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-kg02qug48b

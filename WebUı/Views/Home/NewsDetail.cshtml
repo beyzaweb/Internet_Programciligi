@@ -1,0 +1,50 @@
+﻿@model News
+@{
+    ViewData["Title"] = "NewsDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    
+                    <li class="breadcrumb-item"><a href="/">Ana Sayfa</a></li>
+                    <li class="breadcrumb-item"><a href="@Url.Action("CategoryNews","Home",new{categoryId=@Model.CategoryId})">@Model.Category.Name</a></li>
+                    <li class="breadcrumb-item active">@Model.Title</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">@Model.Title</h1>
+
+            <div class="text-muted mb-3">
+                <small>
+                    <i class="bi bi-calendar"></i> @Model.CreatedDate.ToString("dd.MM.yyyy HH:mm")
+                    <span class="mx-2">|</span>
+                    <i class="bi bi-eye"></i> @Model.ViewCount görüntülenme
+                </small>
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ImagePath))
+            {
+                <img src="@Model.ImagePath" class="img-fluid mb-4 w-100" style="max-height: 500px; object-fit: cover;" alt="@Model.Title">
+            }
+
+            <div class="news-content mb-5">
+                @Html.Raw(Model.Content)
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+@section Scripts {
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.min.js"></script>
+    </script>
+}
